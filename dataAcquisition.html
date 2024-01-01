@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Quality Detection System - Data Acquisition</title>
+    <link rel="stylesheet" href="dataAcquisition.css">
+</head>
+<body>
+
+    <header>
+        <h1>Data Acquisition Module</h1>
+    </header>
+
+    <section>
+        <h2>Submit Sensor Data</h2>
+        
+        <form id="sensorDataForm">
+            <label for="parameter">Parameter:</label>
+            <select id="parameter" name="parameter" required>
+                <option value="temperature">Temperature</option>
+                <option value="phLevel">pH Level</option>
+                <!-- Add more options based on your sensor parameters -->
+            </select>
+
+            <label for="value">Sensor Value:</label>
+            <input type="number" id="value" name="value" required>
+
+            <button type="button" onclick="validateAndSubmit()">Submit Data</button>
+        </form>
+
+        <div id="feedback">
+            <!-- Display feedback to the user -->
+        </div>
+
+        <div id="dataDisplay">
+            <h3>Submitted Data Log</h3>
+            <table id="dataLog">
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Display submitted data log here -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Water Quality Detection System. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function validateAndSubmit() {
+            const parameter = document.getElementById('parameter').value;
+            const value = document.getElementById('value').value;
+
+            // Validate input
+            if (!parameter || !value || isNaN(value)) {
+                displayFeedback('Please enter valid values for Parameter and Sensor Value.', 'error');
+                return;
+            }
+
+            // Get current timestamp
+            const timestamp = new Date().toLocaleString();
+
+            // Display submitted data in the log
+            const dataLog = document.getElementById('dataLog');
+            const tableBody = dataLog.querySelector('tbody');
+            
+            // Create a new table row
+            const newRow = tableBody.insertRow(0);
+
+            // Insert cells with data
+            newRow.insertCell(0).innerText = parameter;
+            newRow.insertCell(1).innerText = value;
+            newRow.insertCell(2).innerText = timestamp;
+
+            // Clear the form for the next input
+            document.getElementById('sensorDataForm').reset();
+
+            // Display success feedback
+            displayFeedback('Data submitted successfully!', 'success');
+
+            // Simulated asynchronous data submission (replace with actual server-side logic)
+            submitDataToServer({ parameter, value, timestamp });
+        }
+
+        function submitDataToServer(data) {
+            // Simulated asynchronous fetch (replace with actual endpoint and handling)
+            fetch('http://your-api-endpoint.com/submit-data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Server responded with status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(responseData => {
+                console.log('Server Response:', responseData);
+            })
+            .catch(error => {
+                console.error('Error:', error.message);
+                displayFeedback('Failed to submit data. Please try again later.', 'error');
+            });
+        }
+
+        function displayFeedback(message, type) {
+            const feedbackContainer = document.getElementById('feedback');
+            feedbackContainer.innerHTML = `<p class="${type}">${message}</p>`;
+
+            // Clear feedback after a few seconds
+            setTimeout(() => {
+                feedbackContainer.innerHTML = '';
+            }, 3000);
+        }
+    </script>
+
+</body>
+</html>
