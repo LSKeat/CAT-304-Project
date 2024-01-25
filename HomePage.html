@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!--  CSS -->
-    <link  href="LoginStyles.css" rel="stylesheet">
+    <link  href="styles.css" rel="stylesheet">
     <!-- Boxicons CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     
@@ -35,27 +35,27 @@
                 </li>
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="index.html">
+                        <a href="#">
                             <i class='bx bx-home-alt icon'></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="FeaturesMod.html">
+                        <a href="FeaturesMod.html" target="_blank">
                             <i class='bx bx-line-chart icon'></i>
                             <span class="text nav-text">Features</span>
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="dataAcquisition.html">
+                        <a href="dataAcquisition.html" target="_blank">
                             <i class='bx bxs-pie-chart-alt-2 icon'></i>
                             <span class="text nav-text">Data Analytic</span>
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="AlertingMod.html">
+                        <a href="AlertingMod.html" target="_blank">
                             <i class='bx bxs-info-circle icon'></i>
-                            <span class="text nav-text">Report</span>
+                            <span class="text nav-text">Alert</span>
                         </a>
                     </li>
                 </ul>
@@ -63,7 +63,7 @@
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="/Login.html">
+                    <a href="#">
                         <i class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Logout</span>
                     </a>
@@ -78,44 +78,28 @@
 
                     <div class="toggle-switch">
                         <span class="switch"></span>
-                    </div>      
+                    </div>
+                        
                 </li>
             </div>
+
+
+
         </div>
     </nav>
 
-    <section class="login">
-        <form method="POST" action="/login.php" class="form-box">               
-            <div class="register-container" id="register">
-                <div class="top">
-                    <span class="text nav-text">Don't Have an account? <a href="/Register.html">Sign Up</a></span>
-                    <header>Log in</header>
-                </div>
-                <div class="input-box">
-                    <input name="email" class="input-field" placeholder="Email">
-                    <i class="bx bx-envelope icon"></i>
-                </div>
-                <div class="input-box">
-                    <input name="password" class="input-field" placeholder="Password">
-                    <i class="bx bx-lock-alt icon"></i>
-                </div>
-                <div class="input-box">
-                    <input type="submit" class="submit" value="Login">
-                </div>
-                <div class="two-col">
-                    <div class="one">
-                        <input type="checkbox" id="register-check">
-                        <label for="register-check"> Remember Me</label>
-                    </div>
-                    <div class="two">
-                        <label><a href="#">Terms & conditions</a></label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>  
+    <section class="home">
+        <div class="text">Water Quality Monitoring System</div>
+        <p>Stay updated with the water quality of your local bodies. </p>
     </section>
-    
+
+    <!-- <section id="about">
+        <p>This system provides real-time water quality data, ensuring the safety of drinking water and preserving the environment.</p>
+      </section>
+    <footer>
+        <p>&copy; 2024 Water Quality Monitoring System. All rights reserved.</p>
+    </footer> -->
+
     <script src="script.js"></script>
     
 </body>

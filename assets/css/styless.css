@@ -1,0 +1,41 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d3f2fe; /* Light blue background color */
+    background-image: url("drop.gif"); /* Replace with your water droplets image URL */
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    animation: water-droplets 5s infinite;
+}
+
+@keyframes water-droplets {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+header, section, footer {
+    padding: 20px;
+    /* Removed background-color to inherit light blue from body */
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}

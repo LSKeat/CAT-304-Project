@@ -205,32 +205,6 @@ body.dark .sidebar li a:hover .text{
     transition: var(--tran-05);
 }
 
-/* Log in and out  */
-/* .menu-bar .status .log-in-out{
-    height: 50px;
-    width: 60px;
-    display: flex;
-    align-items: center;
-    transition: var(--tran-03);
-}
-
-.menu-bar .status i{
-    position: absolute;
-    transition: var(--tran-03);
-}
-
-.menu-bar .log-in-out i.log-out{
-    opacity: 0;
-}
-
-body.dark .menu-bar .log-in-out i.log-out{
-    opacity: 1;
-}
-
-body.dark .menu-bar .log-in-out i.log-in{
-    opacity: 0;
-} */
-
 /* dark mode icon */
 .menu-bar .mode .moon-sun{
     height: 50px;
@@ -293,25 +267,140 @@ body.dark .menu-bar .mode i.moon{
 
 body.dark .switch::before{
     left: 24px;
-} 
+}
 
-.home{
-    position: relative;
+.sidebar.close ~ .home{
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+.sidebar.close ~ .home1{
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+.sidebar.close ~ .home2{
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+.sidebar.close ~ .home3{
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+section{
     height: 100vh;
-    left: 250px;
-    width: calc(100% - 250px);
-    background: var(--body-color);
-    transition: var(--tran-05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .home .text{
     font-size: 30px;
     font-weight: 500;
     color: var(--text-color);
-    padding: 8px, 40px;
+    padding: 8px, 40px; 
 }
 
-.sidebar.close ~ .home{
-    left: 88px;
-    width: calc(100% - 88px);
+.home{
+    position: relative;
+    height: 100vh;
+    left: 250px;
+    width: calc(100% - 250px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('homebackground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: var(--tran-03);
+}
+
+.home-text{
+    font-size: 70px;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.home-text p{
+    font-size: 40px;
+    font-weight: 800;
+    margin: 10px 0 0;
+    display: center;
+}
+
+.home1{
+    position: relative;
+    height: 100vh;
+    left: 250px;
+    width: calc(100% - 250px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('home1background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: var(--tran-03);
+}
+
+.home-text1{
+    font-weight: 600;
+    font-size: 30px;
+    padding: 50px 50px 90px 150px;
+}
+
+.paragraph-box{
+    margin: 200px 0 0 -800px;
+    padding: 25px 50px 50px;
+    height: 750px;
+    width: 600px;
+    background-color: #fdeaea;
+    border-radius: 12px;
+}
+
+.home2 {
+    position: relative;
+    height: 100vh;
+    left: 250px;
+    width: calc(100% - 250px);
+    display: flex;
+    background-color: var(--body-color);
+    transition: var(--tran-03);
+    justify-content: center;
+}
+
+.home2 .home-text2 {
+    font-size: 40px;
+    color: rgb(135, 215, 241);
+    text-align: center;
+    align-items: center;
+}
+
+.home2 .table-text{
+    color: var(--text-color);
+    font-size: 25px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid var(--text-color);
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary-color-light);
+}
+
+.home2 img{
+    padding: 0 20px 0;
+    width: 600px;
+    height: auto;
+    margin-top: 20px;
 }

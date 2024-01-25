@@ -21,10 +21,5 @@ const body = document.querySelector("body"),
         }else{
             modeText.innerText = "Dark Mode"
         }
-        // if(body.classList.contains("dark")){
-        //   statusText.innerText = "Logout"
-        // }else{
-        //   statusText.innerText = "Login"
-        // }
       });
 

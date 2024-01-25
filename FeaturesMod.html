@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<
+<html>
+	<head>
+		<title>Data Analysis and Visualization</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<canvas id="myChart" width="400" height="200"></canvas>
+	<style>
+		body {
+			font-family: 'Arial', sans-serif;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+
+		canvas {
+			max-width: 100%;
+			height: auto;
+		}
+	</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Water Quality Monitoring System Data Analysis and Visualization </h1>
+						<p>PH &nbsp;&bull;&nbsp; Temperature &nbsp;&bull;&nbsp; Turbidity</p>
+						<nav>
+							<ul>
+								<li><a href="#" class="icon solid fa-flask"><span class="label">pH</span></a></li> <!-- Using a flask icon as a placeholder for pH -->
+								<li><a href="#" class="icon solid fa-thermometer-half"><span class="label">Temperature</span></a></li> <!-- Using a thermometer-half icon for temperature -->
+								<li><a href="#" class="icon solid fa-water"><span class="label">Turbidity</span></a></li> <!-- Using a water icon as a placeholder for turbidity -->
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<span class="copyright">© 2024 Water Quality Monitoring System
+					</footer>
+
+			</div>
+		</div>
+		<script>
+			window.onload = function () {
+				document.body.classList.remove('is-preload');
+			};
+
+			window.ontouchmove = function () {
+				return false;
+			};
+
+			window.onorientationchange = function () {
+				document.body.scrollTop = 0;
+			};
+
+			function visualizeData(title, labels, data, chartType) {
+				const newTab = window.open();
+				newTab.document.write('<html><head><title>' + title + '</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js"></head><body><canvas id="chartCanvas"></canvas></body></html>');
+
+				const ctx = newTab.document.getElementById('chartCanvas').getContext('2d');
+
+				new Chart(ctx, {
+					type: chartType,
+					data: {
+						labels: labels,
+						datasets: [{
+							label: title,
+							data: data,
+							backgroundColor: 'rgba(75, 192, 192, 0.2)',
+							borderColor: 'rgba(75, 192, 192, 1)',
+							borderWidth: 1,
+						}],
+					},
+					options: {
+						scales: {
+							y: {
+								beginAtZero: true,
+							},
+						},
+					},
+				});
+			}
+
+			document.querySelector('.fa-flask').addEventListener('click', function () {
+				visualizeData('pH Histogram', ['Ph1', 'Ph2', 'Ph3', 'Ph4', 'Ph5', 'Ph6', ], [6.95, 7.23, 3.93,7.10,7.23,13.95], 'bar');
+			});
+
+			document.querySelector('.fa-thermometer-half').addEventListener('click', function () {
+				visualizeData('Temperature Line Chart', ['Temp1', 'Temp2', 'Temp3', 'Temp4', 'Temp5', 'Temp6', ], [24.67,84.77,24.67,24.67,13.73,24.57], 'line');
+			});
+
+			document.querySelector('.fa-water').addEventListener('click', function () {
+				visualizeData('Turbidity Bar Chart', ['Turbidity1', 'Turbidity2', 'Turbidity3', 'Turbidity4', 'Turbidity5', 'Turbidity6', ], [1.28,5.33,5.35,5.38,5.33,5.87], 'bar');
+			});
+		</script>
+	</body>
+
+</html>
+
+		<script>
+			window.onload = function() { document.body.classList.remove('is-preload'); }
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+		</script>
+	</body>
+</html>

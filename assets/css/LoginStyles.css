@@ -51,7 +51,7 @@ body.dark{
 }
 
 .sidebar.close{
-    width: 250px;
+    width: 88px;
 }
 
 /* Resuable CSS */
@@ -65,7 +65,7 @@ body.dark{
 }
 
 .sidebar.close .text{
-   opacity: 1;
+   opacity: 0;
 }
 
 .sidebar .image{
@@ -207,33 +207,6 @@ body.dark .sidebar li a:hover .text{
     transition: var(--tran-05);
 }
 
-/* Log in and out  */
-/* .menu-bar .status .log-in-out{
-    height: 50px;
-    width: 60px;
-    display: flex;
-    align-items: center;
-    transition: var(--tran-03);
-}
-
-.menu-bar .status i{
-    position: absolute;
-    transition: var(--tran-03);
-}
-
-.menu-bar .log-in-out i.log-out{
-    opacity: 0;
-}
-
-body.dark .menu-bar .log-in-out i.log-out{
-    opacity: 1;
-}
-
-body.dark .menu-bar .log-in-out i.log-in{
-    opacity: 0;
-} */
-
-/* dark mode icon */
 .menu-bar .mode .moon-sun{
     height: 50px;
     width: 60px;
@@ -301,21 +274,18 @@ body.dark .switch::before{
     position: relative;
     height: 100vh;
     left: 250px;
-    width: calc(100% - 250px);
-    background: url('/assets/images/background.png');
-    transition: var(--tran-05);
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-.sidebar.close ~ .login {
-    width: calc(100% - 88px);
+    justify-content: center;
+    background: url('background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: var(--tran-03);
 }
 
 body.dark .login {
     --body-color: #18191A;
-    background: url('/assets/images/background1.jpg'); /* Adjust this line as needed */
+    background: url('background1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -327,7 +297,7 @@ body.dark .login {
     padding: 8px, 40px;
 }
 
-.sidebar.close ~ .home{
+.sidebar.close ~ .login{
     left: 88px;
     width: calc(100% - 88px);
 }
@@ -380,7 +350,6 @@ body.dark .login {
 }
 
 .register-container{
-    /* background-color: #18191A; */
     width: 500px;
     display: flex;
     flex-direction: column;
