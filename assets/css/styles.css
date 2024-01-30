@@ -311,7 +311,7 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('homebackground.jpg');
+    background: url('/assets/images/background.png');
     background-repeat: no-repeat;
     background-size: cover;
     transition: var(--tran-03);
@@ -338,7 +338,7 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('home1background.jpg');
+    background: url('/assets/images/home1background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     transition: var(--tran-03);

@@ -277,7 +277,7 @@ body.dark .switch::before{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('background.png');
+    background: url('/assets/images/background.png');
     background-repeat: no-repeat;
     background-size: cover;
     transition: var(--tran-03);
@@ -285,7 +285,7 @@ body.dark .switch::before{
 
 body.dark .login {
     --body-color: #18191A;
-    background: url('background1.jpg');
+    background: url('/assets/images/background1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }

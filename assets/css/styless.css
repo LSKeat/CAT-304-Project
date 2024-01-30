@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #d3f2fe; /* Light blue background color */
-    background-image: url("drop.gif"); /* Replace with your water droplets image URL */
+    background-image: url("/assets/images/drop.gif"); /* Replace with your water droplets image URL */
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
